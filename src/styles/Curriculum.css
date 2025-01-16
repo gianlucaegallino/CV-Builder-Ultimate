@@ -1,0 +1,14 @@
+.curriculum {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.curriculumPage {
+  background-color: var(--myWhite);
+  box-shadow: var(--myShadow);
+  color: var(--myBlack);
+  font-family: Newsreader;
+  height: 750px;
+  padding: 40px 30px;
+  width: calc(750px / 1.414);
+}

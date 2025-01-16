@@ -1,0 +1,37 @@
+@font-face {
+    font-family: Newsreader;
+    src: url(../assets/Newsreader_24pt-Regular.ttf);
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(../assets/Inter_24pt-Regular.ttf);
+}
+
+:root {
+  --myBlack: #0d1b2a;
+  --myGray: #1b263b;
+  --myBlue: #415a77;
+  --myLightBlue: #778da9;
+  --myCream: #E0E1DD;
+  --myWhite: #f1f1f1;
+  --myShadow: 0px 3px 15px rgba(0, 0, 0, 0.541);
+}
+
+div#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 10fr;
+  color: var(--myWhite);
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+main {
+  background-color: var(--myBlack);
+  grid-column: 1 / 3;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  grid-template-rows: 1fr;
+}

@@ -1,0 +1,23 @@
+.inputWrapper{
+    background-color: var(--myGray);
+    padding: 30px;
+    border-radius: 35px;
+    border: 0px;
+    border: 2px solid var(--myBlack);
+    transition: border 0.5s;
+} 
+
+.inputWrapper:hover{
+    border: 2px solid #415a7775;
+
+}
+
+h2{
+    margin: 0px;
+}
+
+.form{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
