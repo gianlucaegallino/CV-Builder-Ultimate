@@ -1,0 +1,26 @@
+label{
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-top: 4px;
+    background-color: #415a7746;
+    border: none;
+    border-radius: 5px;
+    height: 1.7rem;
+    outline:1px solid var(--myGray);
+    transition: outline 0.25s;
+    color: var(--myWhite);
+    padding-left: 5px;
+    max-width: 100%;
+}
+
+input:focus{
+
+    outline:1px solid var(--myLightBlue);
+}
+
+.myInput{
+    margin-top: 10px;
+}

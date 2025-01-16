@@ -12,4 +12,14 @@
 
 .Title{
     color: var(--myCream);
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0px;
+    will-change: opacity;
+    transition: opacity 450ms;
+    opacity:0.90;
+}
+.Title:hover {
+    opacity:1 ;
+    transition: opacity 150ms;
 }

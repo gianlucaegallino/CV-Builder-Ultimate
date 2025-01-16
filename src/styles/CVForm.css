@@ -1,6 +1,7 @@
 .CVForm{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
-    padding: 50px;
+    padding: 50px 120px;
 }

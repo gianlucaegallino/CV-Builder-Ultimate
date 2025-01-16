@@ -1,14 +1,17 @@
 .curriculum {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   justify-content: center;
+  padding: 20px 0px;
 }
 .curriculumPage {
+  --sizeFactor : 1.35;
   background-color: var(--myWhite);
   box-shadow: var(--myShadow);
   color: var(--myBlack);
   font-family: Newsreader;
-  height: 750px;
+
   padding: 40px 30px;
-  width: calc(750px / 1.414);
+  height: calc(750px * var(--sizeFactor));
+  width: calc((750px / 1.414) * var(--sizeFactor));
 }

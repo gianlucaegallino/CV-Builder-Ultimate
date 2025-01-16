@@ -5,6 +5,7 @@
     border: 0px;
     border: 2px solid var(--myBlack);
     transition: border 0.5s;
+    min-width: 100%;
 } 
 
 .inputWrapper:hover{
