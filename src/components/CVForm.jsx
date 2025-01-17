@@ -11,7 +11,9 @@ export default function CVForm({
   edData,
   jobData,
   newEdFn,
-  newJobFn
+  newJobFn,
+  destroyEducation,
+  destroyJob,
 }) {
   let educations = [];
   let jobs = [];
@@ -30,7 +32,7 @@ export default function CVForm({
     } = edData[i];
 
     educations.push(
-      <div key={key}  className="group">
+      <div key={key} className="group">
         <LabeledInput
           label="University Name"
           field="university"
@@ -59,6 +61,14 @@ export default function CVForm({
           extraFunction={educationFn}
           index={i}
         ></LabeledInput>
+        <button
+          className="del span"
+          onClick={() => {
+            destroyEducation(i);
+          }}
+        >
+          Remove entry
+        </button>
       </div>
     );
   }
@@ -111,11 +121,12 @@ export default function CVForm({
           extraFunction={jobFn}
           index={j}
         ></LabeledInput>
+        <button className="del single" onClick={() => destroyJob(j)}>
+          Remove entry
+        </button>
       </div>
     );
   }
-
-
 
   return (
     <div className="CVForm">
@@ -150,12 +161,16 @@ export default function CVForm({
 
       <InputWrapper title="Education">
         {educations}
-        <button className="add" onClick={newEdFn}>+ Add Education</button>
+        <button className="add" onClick={newEdFn}>
+          + Add Education
+        </button>
       </InputWrapper>
 
       <InputWrapper title="Experience">
         {jobs}
-        <button className="add" onClick={newJobFn}>+ Add Experience</button>
+        <button className="add" onClick={newJobFn}>
+          + Add Experience
+        </button>
       </InputWrapper>
     </div>
   );

@@ -13,6 +13,7 @@
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    width: 96%;
     transition: transform 0.2s, opacity 0.2s;
 }
 
@@ -27,4 +28,33 @@
     margin-bottom: 25px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.del{
+    margin-top: 0px;
+    background-color: #c20909;
+    color: var(--myWhite);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 96%;
+    transition: transform 0.2s, opacity 0.2s;
+
+    margin-top: 15px;
+}
+
+
+.del:hover{
+    opacity: 0.95;
+    transform: scale(0.99);
+    cursor: pointer;            
+}
+
+.span{
+    grid-column: span 2;
+}
+.single{
+        height: 65%;
+        margin-top: 20px;
+        padding: 0px;
 }

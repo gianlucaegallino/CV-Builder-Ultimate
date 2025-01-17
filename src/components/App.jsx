@@ -85,7 +85,6 @@ function App() {
     if (educationData.length < 3) {
       let newData = [...educationData];
       newData.push({ key: crypto.randomUUID() });
-      console.log(newData);
       setEducationData(newData);
     } else alert("Cant add more than 3 educations.");
   }
@@ -94,9 +93,23 @@ function App() {
     if (jobData.length < 3) {
       let newData = [...jobData];
       newData.push({ key: crypto.randomUUID() });
-      console.log(newData);
       setJobData(newData);
     } else alert("Cant add more than 3 jobs.");
+  }
+
+  function removeEducation(index){
+    if (educationData.length > 0) {
+      let newData = [...educationData];
+      newData.splice(index, 1);
+      setEducationData(newData);
+    } else alert("Cant remove non-existant education.");
+  }
+  function removeJob(index){
+    if (jobData.length > 0) {
+      let newData = [...jobData];
+      newData.splice(index, 1);
+      setJobData(newData);
+    } else alert("Cant remove non-existant jobs.");
   }
 
   return (
@@ -118,6 +131,8 @@ function App() {
           jobData={jobData}
           newEdFn={addNewEducation}
           newJobFn={addNewJob}
+          destroyEducation={removeEducation}
+          destroyJob={removeJob}
         />
       </main>
     </>
