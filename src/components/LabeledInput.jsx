@@ -6,13 +6,14 @@ export default function LabeledInput({
   label = "Input Label",
   initialValue = "",
   extraFunction = null,
-  field = null
+  field = null,
+  index = null,
 }) {
   const [value, setValue] = useState(initialValue);
 
   const handleChange = (e) => {
     setValue(e.target.value);
-    extraFunction(field, e.target.value);
+    extraFunction(field, index, e.target.value);
   };
 
   return (

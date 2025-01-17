@@ -46,24 +46,28 @@ function App() {
       startDate: "2021-05-01",
       endDate: "2021-08-31",
       key: crypto.randomUUID(),
-    }]
-  );
+    },
+  ]);
 
-  function handlePersonalDataChange(field, value) {
+  function handlePersonalDataChange(field, index, value) {
     if (field) {
       setPersonalData({ ...personalData, [`${field}`]: value });
     }
   }
 
-  function handleEducationDataChange(field, value) {
-    if (field) {
-      setEducationData({ ...educationData, [`${field}`]: value });
+  function handleEducationDataChange(field, index, value) {
+    if (field && index != null) {
+      let newData = [...educationData];
+      newData[index] = { ...newData[index], [`${field}`]: value };
+      setEducationData(newData);
     }
   }
 
-  function handleJobDataChange(field, value) {
-    if (field) {
-      setJobData({ ...jobData, [`${field}`]: value });
+  function handleJobDataChange(field, index, value) {
+    if (field && index != null) {
+      let newData = [...jobData];
+      newData[index] = { ...newData[index], [`${field}`]: value };
+      setJobData(newData);
     }
   }
 
@@ -87,6 +91,9 @@ function App() {
           personalFn={handlePersonalDataChange}
           educationFn={handleEducationDataChange}
           jobFn={handleJobDataChange}
+          perData={personalData}
+          edData={educationData}
+          jobData={jobData}
         />
       </main>
     </>
