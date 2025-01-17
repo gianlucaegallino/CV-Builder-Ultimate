@@ -1,12 +1,13 @@
-export default function CvHeading({data=false}){
+export default function CvHeading({data}){
+    const {name=false, email = false, phone = false, city = false, country = false} = data;
     //TODO: Make dynamic y Handle errors
     return(
         <div className="cvHeading">
-            <h1>{data.name}</h1>
-            <p>{data.email}</p>
-            <p>{data.phone}</p>
-            <p>{data.city}</p>
-            <p>{data.country}</p>
+            <h1>{name}</h1>
+            <p>{email}</p>
+            <p>{phone}</p>
+            <p>{city}</p>
+            <p>{country}</p>
         </div>
     )
 }
