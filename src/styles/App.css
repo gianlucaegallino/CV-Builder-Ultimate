@@ -22,7 +22,7 @@ div#root {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 10fr;
+  grid-template-rows: 140px 1fr;
   color: var(--myWhite);
   font-family: Inter, Arial, Helvetica, sans-serif;
 }

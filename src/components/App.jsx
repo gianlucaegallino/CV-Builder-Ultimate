@@ -6,6 +6,8 @@ import CVForm from "./CVForm";
 import { useState } from "react";
 
 function App() {
+  // Defines initial dataset
+
   const [personalData, setPersonalData] = useState({
     name: "Jane Doe",
     email: "jane.doe@example.com",
@@ -49,6 +51,8 @@ function App() {
     },
   ]);
 
+  // Defines event handlers
+
   function handlePersonalDataChange(field, index, value) {
     if (field) {
       setPersonalData({ ...personalData, [`${field}`]: value });
@@ -77,6 +81,24 @@ function App() {
     setJobData({});
   }
 
+  function addNewEducation() {
+    if (educationData.length < 3) {
+      let newData = [...educationData];
+      newData.push({ key: crypto.randomUUID() });
+      console.log(newData);
+      setEducationData(newData);
+    } else alert("Cant add more than 3 educations.");
+  }
+
+  function addNewJob() {
+    if (jobData.length < 3) {
+      let newData = [...jobData];
+      newData.push({ key: crypto.randomUUID() });
+      console.log(newData);
+      setJobData(newData);
+    } else alert("Cant add more than 3 jobs.");
+  }
+
   return (
     <>
       <CustomHeader func={wipeData} />
@@ -94,6 +116,8 @@ function App() {
           perData={personalData}
           edData={educationData}
           jobData={jobData}
+          newEdFn={addNewEducation}
+          newJobFn={addNewJob}
         />
       </main>
     </>

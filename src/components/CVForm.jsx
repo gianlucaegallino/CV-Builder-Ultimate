@@ -10,25 +10,27 @@ export default function CVForm({
   perData,
   edData,
   jobData,
+  newEdFn,
+  newJobFn
 }) {
   let educations = [];
   let jobs = [];
 
   let elen = edData.length;
-  let jlen = edData.length;
+  let jlen = jobData.length;
 
   //make forms for education
   for (let i = 0; i < elen; i++) {
-    let {
-      university = false,
-      degree = false,
-      startDate = false,
-      endDate = false,
+    const {
+      university = "",
+      degree = "",
+      startDate = "",
+      endDate = "",
       key,
     } = edData[i];
 
     educations.push(
-      <div key={key}>
+      <div key={key}  className="group">
         <LabeledInput
           label="University Name"
           field="university"
@@ -63,17 +65,17 @@ export default function CVForm({
 
   //make forms for jobs
   for (let j = 0; j < jlen; j++) {
-    let {
-      company = false,
-      jobTitle = false,
-      description = false,
-      startDate = false,
-      endDate = false,
+    const {
+      company = "",
+      jobTitle = "",
+      description = "",
+      startDate = "",
+      endDate = "",
       key,
     } = jobData[j];
 
     jobs.push(
-      <div key={key}>
+      <div key={key} className="group">
         <LabeledInput
           label="Company Name"
           field="company"
@@ -113,47 +115,47 @@ export default function CVForm({
     );
   }
 
-  function addNewEducation() {}
 
-  function addNewJob() {}
 
   return (
     <div className="CVForm">
       <InputWrapper title="Personal Information">
-        <LabeledInput
-          label="Full Name"
-          field="name"
-          extraFunction={personalFn}
-          initialValue={perData.name}
-        ></LabeledInput>
-        <LabeledInput
-          label="Email"
-          field="email"
-          extraFunction={personalFn}
-          initialValue={perData.email}
-        ></LabeledInput>
-        <LabeledInput
-          label="Phone Number"
-          field="phone"
-          extraFunction={personalFn}
-          initialValue={perData.phone}
-        ></LabeledInput>
-        <LabeledInput
-          label="Address"
-          field="address"
-          extraFunction={personalFn}
-          initialValue={perData.address}
-        ></LabeledInput>
+        <div className="group">
+          <LabeledInput
+            label="Full Name"
+            field="name"
+            extraFunction={personalFn}
+            initialValue={perData.name}
+          ></LabeledInput>
+          <LabeledInput
+            label="Email"
+            field="email"
+            extraFunction={personalFn}
+            initialValue={perData.email}
+          ></LabeledInput>
+          <LabeledInput
+            label="Phone Number"
+            field="phone"
+            extraFunction={personalFn}
+            initialValue={perData.phone}
+          ></LabeledInput>
+          <LabeledInput
+            label="Address"
+            field="address"
+            extraFunction={personalFn}
+            initialValue={perData.address}
+          ></LabeledInput>
+        </div>
       </InputWrapper>
 
       <InputWrapper title="Education">
         {educations}
-        <button onClick={addNewEducation}></button>
+        <button className="add" onClick={newEdFn}>+ Add Education</button>
       </InputWrapper>
 
       <InputWrapper title="Experience">
         {jobs}
-        <button onClick={addNewJob}></button>
+        <button className="add" onClick={newJobFn}>+ Add Experience</button>
       </InputWrapper>
     </div>
   );

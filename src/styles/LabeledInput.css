@@ -16,6 +16,10 @@ input {
     max-width: 100%;
 }
 
+.group input{
+    max-width: 90%;
+}
+
 input:focus{
 
     outline:1px solid var(--myLightBlue);
