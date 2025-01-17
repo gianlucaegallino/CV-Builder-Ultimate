@@ -6,7 +6,7 @@ import CVForm from "./CVForm";
 import { useState } from "react";
 
 function App() {
-  //TODO: wipe data btn?
+  
   const [personalData, setPersonalData] = useState({
     name: "Jane Doe",
     email: "jane.doe@example.com",
@@ -46,10 +46,16 @@ function App() {
     }
   }
 
+  function wipeData(){
+    setPersonalData({});
+    setEducationData({});
+    setJobData({});
+  }
+
 
   return (
     <>
-      <CustomHeader />
+      <CustomHeader func={wipeData}/>
 
       <main>
         <Curriculum
