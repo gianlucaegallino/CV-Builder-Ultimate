@@ -1,28 +1,16 @@
 import "../styles/Curriculum.css"
-export default function Curriculum(){
+import CvHeading from "./CvHeading.jsx"
+import CVEducation from "./CVEducation.jsx"
+import CVJobs from "./CVJobs.jsx"
+
+export default function Curriculum({personalData=false, educationData=false, jobData=false}){
     return(
         <div className="curriculum">
             <div className="curriculumPage">
-                <div className="cvHeading">
-                    <h1>[Name]</h1>
-                    <p>[Email]</p>
-                    <p>[Phone Number]</p>
-                    <p>[City, Country]</p>
-                </div>
+                <CvHeading data={personalData}/>
                 <div className="cvBody">
-                    <div className="education">
-                        <h2>Education</h2>
-                        <h3>[University]</h3>
-                        <h4>[Degree]</h4>
-                        <p>[Start, grad]</p>
-                    </div>
-                    <div className="work">
-                        <h2>Experience</h2>
-                        <h3>[Company]</h3>
-                        <h4>[Job Title]</h4>
-                        <p>[Description]</p>
-                        <p>[Start, end]</p>
-                    </div>
+                    <CVEducation data={educationData}></CVEducation>
+                    <CVJobs data={jobData}></CVJobs>
                 </div>
             </div>
         </div>
