@@ -1,0 +1,19 @@
+.education p{
+    margin:0px
+}
+.education h3, h4{
+    margin: 0px;
+}
+.education h3{
+    margin-top: 5px;
+}
+.education h4{
+    margin-bottom: 3px;
+}
+.education{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.education h2{
+    text-align: center;
+}

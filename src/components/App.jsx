@@ -11,8 +11,7 @@ function App() {
     name: "Jane Doe",
     email: "jane.doe@example.com",
     phone: "+1 234-567-8901",
-    city: "Buenos Aires",
-    country: "Argentina",
+    address: "Buenos Aires, Argentina"
   });
   const [educationData, setEducationData] = useState({
     university: "University of Example",

@@ -10,12 +10,12 @@ export default function CVForm({personalFn, educationFn, jobFn}) {
         <LabeledInput label="Full Name" field="name" extraFunction={personalFn}></LabeledInput>
         <LabeledInput label="Email" field="email" extraFunction={personalFn}></LabeledInput>
         <LabeledInput label="Phone Number" field="phone" extraFunction={personalFn}></LabeledInput>
-        <LabeledInput label="City" field="city" extraFunction={personalFn}></LabeledInput>
-        <LabeledInput label="Country" field="country" extraFunction={personalFn}></LabeledInput>
+        <LabeledInput label="Address" field="address" extraFunction={personalFn}></LabeledInput>
+      
       </InputWrapper>
 
       {/*         TODO: Make this support multiples. */}
-      <InputWrapper title="Educational Experience">
+      <InputWrapper title="Education">
         <LabeledInput label="University Name" field="university" extraFunction={educationFn}></LabeledInput>
         <LabeledInput label="Degree" field="degree" extraFunction={educationFn}></LabeledInput>
         <LabeledInput label="Start Date" field="startDate" extraFunction={educationFn}></LabeledInput>
