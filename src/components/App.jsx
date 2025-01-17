@@ -6,7 +6,7 @@ import CVForm from "./CVForm";
 import { useState } from "react";
 
 function App() {
-  //TODO: Add values to this state to test stuff. 
+  //TODO: wipe data btn?
   const [personalData, setPersonalData] = useState({
     name: "Jane Doe",
     email: "jane.doe@example.com",
@@ -20,20 +20,49 @@ function App() {
     startDate: "2018-08-15",
     endDate: "2022-05-20",
   });
-  const [jobData, setJobDataData] = useState({
+  const [jobData, setJobData] = useState({
     company: "Tech Solutions Inc.",
     jobTitle: "Software Developer",
-    description: "Developed and maintained web applications, ensuring optimal performance and user experience.",
+    description:
+      "Developed and maintained web applications, ensuring optimal performance and user experience.",
     startDate: "2022-06-01",
     endDate: "2024-12-31",
   });
+
+  function handlePersonalDataChange(field, value){
+    if (field){
+      setPersonalData({...personalData, [`${field}`]:value})
+    }
+  }
+
+  function handleEducationDataChange(field, value){
+    if (field){
+      setEducationData({...educationData, [`${field}`]:value})
+    }
+  }
+
+  function handleJobDataChange(field, value){
+    if (field){
+      setJobData({...jobData, [`${field}`]:value})
+    }
+  }
+
+
   return (
     <>
       <CustomHeader />
 
       <main>
-        <Curriculum personalData={personalData} educationData={educationData} jobData = {jobData}/>
-        <CVForm />
+        <Curriculum
+          personalData={personalData}
+          educationData={educationData}
+          jobData={jobData}
+        />
+        <CVForm 
+        personalFn = {handlePersonalDataChange}
+        educationFn = {handleEducationDataChange}
+        jobFn = {handleJobDataChange}
+        />
       </main>
     </>
   );

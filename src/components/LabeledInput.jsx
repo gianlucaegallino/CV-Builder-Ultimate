@@ -5,15 +5,14 @@ import ControlledInput from "./ControlledInput.jsx";
 export default function LabeledInput({
   label = "Input Label",
   initialValue = "",
-  validation = "",
-  extraFunction = "null",
+  extraFunction = null,
+  field = null
 }) {
   const [value, setValue] = useState(initialValue);
 
   const handleChange = (e) => {
-    //TODO: Use the validation here
-    //TODO: Add the extra functions here
     setValue(e.target.value);
+    extraFunction(field, e.target.value);
   };
 
   return (
