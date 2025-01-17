@@ -3,7 +3,8 @@ export default function CustomHeader({func}){
     return(
         <header className="hdr">
                 <p className="Title">Ultimate CV Builder</p>
-                <button onClick={func}>Wipe Data</button>
+{/*  This button opens a can of worms. TODO: Fix functionality, someday.                
+ <button onClick={func}>Wipe Data</button> */}
         </header>
     )
 }
